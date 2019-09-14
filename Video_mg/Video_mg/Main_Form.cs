@@ -26,7 +26,7 @@ namespace Video_mg
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Application.ExitThread();
+            Application.Exit();
         }
     }
 }
