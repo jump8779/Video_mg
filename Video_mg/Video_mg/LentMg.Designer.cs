@@ -133,6 +133,7 @@
             this.bt_search.TabIndex = 2;
             this.bt_search.Text = "찾기";
             this.bt_search.UseVisualStyleBackColor = true;
+            this.bt_search.Click += new System.EventHandler(this.Bt_search_Click);
             // 
             // bt_readC
             // 
@@ -142,6 +143,7 @@
             this.bt_readC.TabIndex = 2;
             this.bt_readC.Text = "카드 읽기";
             this.bt_readC.UseVisualStyleBackColor = true;
+            this.bt_readC.Click += new System.EventHandler(this.Bt_readC_Click);
             // 
             // STBpcs
             // 
@@ -230,6 +232,7 @@
             this.bt_choice.TabIndex = 2;
             this.bt_choice.Text = "고객 선택";
             this.bt_choice.UseVisualStyleBackColor = true;
+            this.bt_choice.Click += new System.EventHandler(this.Bt_choice_Click);
             // 
             // dgMember
             // 
@@ -458,6 +461,7 @@
             this.bt_save.TabIndex = 12;
             this.bt_save.Text = "저장";
             this.bt_save.UseVisualStyleBackColor = true;
+            this.bt_save.Click += new System.EventHandler(this.Bt_save_Click);
             // 
             // bt_vmatch
             // 
@@ -467,6 +471,7 @@
             this.bt_vmatch.TabIndex = 12;
             this.bt_vmatch.Text = "등록";
             this.bt_vmatch.UseVisualStyleBackColor = true;
+            this.bt_vmatch.Click += new System.EventHandler(this.Bt_vmatch_Click);
             // 
             // dateTimePicker1
             // 
@@ -639,6 +644,7 @@
             this.bt_vreturn.TabIndex = 7;
             this.bt_vreturn.Text = "비디오 회수";
             this.bt_vreturn.UseVisualStyleBackColor = true;
+            this.bt_vreturn.Click += new System.EventHandler(this.Bt_vreturn_Click);
             // 
             // label6
             // 
@@ -687,6 +693,8 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "LentMg";
             this.Text = "비디오 대여 및 반납 관리";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.LentMg_FormClosing);
+            this.Load += new System.EventHandler(this.LentMg_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage_Input.ResumeLayout(false);
             this.tabPage_Input.PerformLayout();
