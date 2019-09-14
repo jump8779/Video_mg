@@ -8,3 +8,4 @@ D:\Git_Project\Video_mg\Video_mg\Video_mg\obj\Debug\Video_mg.csproj.GenerateReso
 D:\Git_Project\Video_mg\Video_mg\Video_mg\obj\Debug\Video_mg.csproj.CoreCompileInputs.cache
 D:\Git_Project\Video_mg\Video_mg\Video_mg\obj\Debug\Video_mg.exe
 D:\Git_Project\Video_mg\Video_mg\Video_mg\obj\Debug\Video_mg.pdb
+D:\Git_Project\Video_mg\Video_mg\Video_mg\obj\Debug\Video_mg.LentMg.resources

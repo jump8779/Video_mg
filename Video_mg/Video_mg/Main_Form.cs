@@ -16,5 +16,17 @@ namespace Video_mg
         {
             InitializeComponent();
         }
+
+        private void ToolStripButton_Lent_Click(object sender, EventArgs e)
+        {
+            LentMg lmg = new LentMg();
+            lmg.MdiParent = this;
+            lmg.Show();
+        }
+
+        private void Main_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.ExitThread();
+        }
     }
 }

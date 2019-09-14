@@ -62,7 +62,7 @@
             this.toolStripMenuItem_support});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1184, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1482, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -121,7 +121,7 @@
             this.toolStripButton_VOption});
             this.toolStrip1.Location = new System.Drawing.Point(0, 28);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1184, 47);
+            this.toolStrip1.Size = new System.Drawing.Size(1482, 47);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -133,6 +133,7 @@
             this.toolStripButton_Lent.Size = new System.Drawing.Size(79, 44);
             this.toolStripButton_Lent.Text = "대여/반납";
             this.toolStripButton_Lent.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_Lent.Click += new System.EventHandler(this.ToolStripButton_Lent_Click);
             // 
             // toolStripSeparator1
             // 
@@ -184,13 +185,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 775);
+            this.ClientSize = new System.Drawing.Size(1482, 1055);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Main";
             this.Text = "비디오 관리 프로그램";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Main_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.toolStrip1.ResumeLayout(false);
