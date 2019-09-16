@@ -148,6 +148,7 @@
             this.toolStripButton_VMG.Size = new System.Drawing.Size(93, 44);
             this.toolStripButton_VMG.Text = "비디오 관리";
             this.toolStripButton_VMG.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_VMG.Click += new System.EventHandler(this.ToolStripButton_VMG_Click);
             // 
             // toolStripButton_MMG
             // 

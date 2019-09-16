@@ -23,6 +23,12 @@ namespace Video_mg
             lmg.MdiParent = this;
             lmg.Show();
         }
+        private void ToolStripButton_VMG_Click(object sender, EventArgs e)
+        {
+            VideoMg vmg = new VideoMg();
+            vmg.MdiParent = this;
+            vmg.Show();
+        }
 
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
