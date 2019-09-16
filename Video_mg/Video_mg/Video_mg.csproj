@@ -46,6 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DS_videomg.cs">
+      <DependentUpon>DS_videomg.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DS_videomg.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_videomg.xsd</DependentUpon>
+    </Compile>
     <Compile Include="LentMg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +92,17 @@
     <EmbeddedResource Include="VideoMg.resx">
       <DependentUpon>VideoMg.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DS_videomg.xsc">
+      <DependentUpon>DS_videomg.xsd</DependentUpon>
+    </None>
+    <None Include="DS_videomg.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_videomg.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DS_videomg.xss">
+      <DependentUpon>DS_videomg.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
