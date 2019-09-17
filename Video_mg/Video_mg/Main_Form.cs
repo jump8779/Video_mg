@@ -35,6 +35,12 @@ namespace Video_mg
             mmg.MdiParent = this;
             mmg.Show();
         }
+        private void ToolStripButton_Search_Click(object sender, EventArgs e)
+        {
+            Search ser = new Search();
+            ser.MdiParent = this;
+            ser.Show();
+        }
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();

@@ -168,6 +168,7 @@
             this.toolStripButton_Search.Size = new System.Drawing.Size(78, 44);
             this.toolStripButton_Search.Text = "정보 조회";
             this.toolStripButton_Search.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_Search.Click += new System.EventHandler(this.ToolStripButton_Search_Click);
             // 
             // toolStripSeparator2
             // 
