@@ -158,6 +158,7 @@
             this.toolStripButton_MMG.Size = new System.Drawing.Size(78, 44);
             this.toolStripButton_MMG.Text = "고객 관리";
             this.toolStripButton_MMG.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_MMG.Click += new System.EventHandler(this.ToolStripButton_MMG_Click);
             // 
             // toolStripButton_Search
             // 

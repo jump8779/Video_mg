@@ -29,7 +29,12 @@ namespace Video_mg
             vmg.MdiParent = this;
             vmg.Show();
         }
-
+        private void ToolStripButton_MMG_Click(object sender, EventArgs e)
+        {
+            MemberMg mmg = new MemberMg();
+            mmg.MdiParent = this;
+            mmg.Show();
+        }
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
