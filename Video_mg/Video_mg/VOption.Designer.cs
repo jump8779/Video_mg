@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VOption));
             this.GB_newpro = new System.Windows.Forms.GroupBox();
             this.GB_oldpro = new System.Windows.Forms.GroupBox();
             this.bt_registe = new System.Windows.Forms.Button();
@@ -54,8 +55,16 @@
             this.TBold_lentpay = new System.Windows.Forms.TextBox();
             this.TBold_delaypay = new System.Windows.Forms.TextBox();
             this.TBold_lentdate = new System.Windows.Forms.TextBox();
+            this.dS_videomg1 = new Video_mg.DS_videomg();
+            this.sqlSelectCommand1 = new System.Data.SqlClient.SqlCommand();
+            this.sqlInsertCommand1 = new System.Data.SqlClient.SqlCommand();
+            this.sqlUpdateCommand1 = new System.Data.SqlClient.SqlCommand();
+            this.sqlDeleteCommand1 = new System.Data.SqlClient.SqlCommand();
+            this.sqlDataAdapter1 = new System.Data.SqlClient.SqlDataAdapter();
+            this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
             this.GB_newpro.SuspendLayout();
             this.GB_oldpro.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_videomg1)).BeginInit();
             this.SuspendLayout();
             // 
             // GB_newpro
@@ -105,6 +114,7 @@
             this.bt_registe.TabIndex = 2;
             this.bt_registe.Text = "등록";
             this.bt_registe.UseVisualStyleBackColor = true;
+            this.bt_registe.Click += new System.EventHandler(this.Bt_registe_Click);
             // 
             // bt_edit
             // 
@@ -114,6 +124,7 @@
             this.bt_edit.TabIndex = 2;
             this.bt_edit.Text = "수정";
             this.bt_edit.UseVisualStyleBackColor = true;
+            this.bt_edit.Click += new System.EventHandler(this.Bt_edit_Click);
             // 
             // bt_exit
             // 
@@ -123,6 +134,7 @@
             this.bt_exit.TabIndex = 2;
             this.bt_exit.Text = "나가기";
             this.bt_exit.UseVisualStyleBackColor = true;
+            this.bt_exit.Click += new System.EventHandler(this.Bt_exit_Click);
             // 
             // lblNchangedate
             // 
@@ -299,6 +311,74 @@
             this.TBold_lentdate.Size = new System.Drawing.Size(114, 25);
             this.TBold_lentdate.TabIndex = 8;
             // 
+            // dS_videomg1
+            // 
+            this.dS_videomg1.DataSetName = "DS_videomg";
+            this.dS_videomg1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sqlSelectCommand1
+            // 
+            this.sqlSelectCommand1.CommandText = "SELECT lentoption.*\r\nFROM  lentoption";
+            this.sqlSelectCommand1.Connection = this.sqlConnection1;
+            // 
+            // sqlInsertCommand1
+            // 
+            this.sqlInsertCommand1.CommandText = resources.GetString("sqlInsertCommand1.CommandText");
+            this.sqlInsertCommand1.Connection = this.sqlConnection1;
+            this.sqlInsertCommand1.Parameters.AddRange(new System.Data.SqlClient.SqlParameter[] {
+            new System.Data.SqlClient.SqlParameter("@vcode", System.Data.SqlDbType.Int, 0, "vcode"),
+            new System.Data.SqlClient.SqlParameter("@vdate", System.Data.SqlDbType.VarChar, 0, "vdate"),
+            new System.Data.SqlClient.SqlParameter("@lent_date", System.Data.SqlDbType.VarChar, 0, "lent_date"),
+            new System.Data.SqlClient.SqlParameter("@lent_pay", System.Data.SqlDbType.VarChar, 0, "lent_pay"),
+            new System.Data.SqlClient.SqlParameter("@delay_pay", System.Data.SqlDbType.VarChar, 0, "delay_pay")});
+            // 
+            // sqlUpdateCommand1
+            // 
+            this.sqlUpdateCommand1.CommandText = resources.GetString("sqlUpdateCommand1.CommandText");
+            this.sqlUpdateCommand1.Connection = this.sqlConnection1;
+            this.sqlUpdateCommand1.Parameters.AddRange(new System.Data.SqlClient.SqlParameter[] {
+            new System.Data.SqlClient.SqlParameter("@vcode", System.Data.SqlDbType.Int, 0, "vcode"),
+            new System.Data.SqlClient.SqlParameter("@vdate", System.Data.SqlDbType.VarChar, 0, "vdate"),
+            new System.Data.SqlClient.SqlParameter("@lent_date", System.Data.SqlDbType.VarChar, 0, "lent_date"),
+            new System.Data.SqlClient.SqlParameter("@lent_pay", System.Data.SqlDbType.VarChar, 0, "lent_pay"),
+            new System.Data.SqlClient.SqlParameter("@delay_pay", System.Data.SqlDbType.VarChar, 0, "delay_pay"),
+            new System.Data.SqlClient.SqlParameter("@Original_vcode", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "vcode", System.Data.DataRowVersion.Original, null),
+            new System.Data.SqlClient.SqlParameter("@Original_vdate", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "vdate", System.Data.DataRowVersion.Original, null),
+            new System.Data.SqlClient.SqlParameter("@Original_lent_date", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "lent_date", System.Data.DataRowVersion.Original, null),
+            new System.Data.SqlClient.SqlParameter("@Original_lent_pay", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "lent_pay", System.Data.DataRowVersion.Original, null),
+            new System.Data.SqlClient.SqlParameter("@Original_delay_pay", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "delay_pay", System.Data.DataRowVersion.Original, null)});
+            // 
+            // sqlDeleteCommand1
+            // 
+            this.sqlDeleteCommand1.CommandText = resources.GetString("sqlDeleteCommand1.CommandText");
+            this.sqlDeleteCommand1.Connection = this.sqlConnection1;
+            this.sqlDeleteCommand1.Parameters.AddRange(new System.Data.SqlClient.SqlParameter[] {
+            new System.Data.SqlClient.SqlParameter("@Original_vcode", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "vcode", System.Data.DataRowVersion.Original, null),
+            new System.Data.SqlClient.SqlParameter("@Original_vdate", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "vdate", System.Data.DataRowVersion.Original, null),
+            new System.Data.SqlClient.SqlParameter("@Original_lent_date", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "lent_date", System.Data.DataRowVersion.Original, null),
+            new System.Data.SqlClient.SqlParameter("@Original_lent_pay", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "lent_pay", System.Data.DataRowVersion.Original, null),
+            new System.Data.SqlClient.SqlParameter("@Original_delay_pay", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "delay_pay", System.Data.DataRowVersion.Original, null)});
+            // 
+            // sqlDataAdapter1
+            // 
+            this.sqlDataAdapter1.DeleteCommand = this.sqlDeleteCommand1;
+            this.sqlDataAdapter1.InsertCommand = this.sqlInsertCommand1;
+            this.sqlDataAdapter1.SelectCommand = this.sqlSelectCommand1;
+            this.sqlDataAdapter1.TableMappings.AddRange(new System.Data.Common.DataTableMapping[] {
+            new System.Data.Common.DataTableMapping("Table", "lentoption", new System.Data.Common.DataColumnMapping[] {
+                        new System.Data.Common.DataColumnMapping("vcode", "vcode"),
+                        new System.Data.Common.DataColumnMapping("vdate", "vdate"),
+                        new System.Data.Common.DataColumnMapping("lent_date", "lent_date"),
+                        new System.Data.Common.DataColumnMapping("lent_pay", "lent_pay"),
+                        new System.Data.Common.DataColumnMapping("delay_pay", "delay_pay")})});
+            this.sqlDataAdapter1.UpdateCommand = this.sqlUpdateCommand1;
+            // 
+            // sqlConnection1
+            // 
+            this.sqlConnection1.ConnectionString = "Data Source=localhost;Initial Catalog=Videomg;User ID=sa;Password=std001;Pooling=" +
+    "False";
+            this.sqlConnection1.FireInfoMessageEventOnUserErrors = false;
+            // 
             // VOption
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -318,6 +398,7 @@
             this.GB_newpro.PerformLayout();
             this.GB_oldpro.ResumeLayout(false);
             this.GB_oldpro.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_videomg1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -350,5 +431,12 @@
         private System.Windows.Forms.Button bt_registe;
         private System.Windows.Forms.Button bt_edit;
         private System.Windows.Forms.Button bt_exit;
+        private DS_videomg dS_videomg1;
+        private System.Data.SqlClient.SqlCommand sqlSelectCommand1;
+        private System.Data.SqlClient.SqlConnection sqlConnection1;
+        private System.Data.SqlClient.SqlCommand sqlInsertCommand1;
+        private System.Data.SqlClient.SqlCommand sqlUpdateCommand1;
+        private System.Data.SqlClient.SqlCommand sqlDeleteCommand1;
+        private System.Data.SqlClient.SqlDataAdapter sqlDataAdapter1;
     }
 }
