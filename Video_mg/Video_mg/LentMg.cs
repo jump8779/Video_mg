@@ -97,6 +97,23 @@ namespace Video_mg
 
                     MemberSelect();
                 }
+                else if (DS.Tables["membermg"].Rows.Count < 1)
+                {
+                    DialogResult msg;
+                    msg = MessageBox.Show("고객 정보가 없습니다. 추가하시겠습니까?", "고객 정보",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+                    if (msg == DialogResult.Yes)
+                    {
+                        MemberMg member = new MemberMg();
+                        member.MdiParent = this.MdiParent;
+                        member.Show();
+                        return;
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
                 else
                 {
                     DialogResult msg;
