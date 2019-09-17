@@ -28,21 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VideoMg));
             this.GB_videoinfo = new System.Windows.Forms.GroupBox();
-            this.lblvcode = new System.Windows.Forms.Label();
-            this.lblgenre = new System.Windows.Forms.Label();
-            this.lblsubject = new System.Windows.Forms.Label();
-            this.lblact = new System.Windows.Forms.Label();
-            this.lbldirect = new System.Windows.Forms.Label();
-            this.lblcompany = new System.Windows.Forms.Label();
-            this.lbloutdate = new System.Windows.Forms.Label();
-            this.TBvcode = new System.Windows.Forms.TextBox();
-            this.TBgenre = new System.Windows.Forms.TextBox();
-            this.TBsubject = new System.Windows.Forms.TextBox();
-            this.TBact = new System.Windows.Forms.TextBox();
-            this.TBdirect = new System.Windows.Forms.TextBox();
-            this.TBcompany = new System.Windows.Forms.TextBox();
             this.DPoutdate = new System.Windows.Forms.DateTimePicker();
+            this.TBcompany = new System.Windows.Forms.TextBox();
+            this.TBdirect = new System.Windows.Forms.TextBox();
+            this.TBact = new System.Windows.Forms.TextBox();
+            this.TBsubject = new System.Windows.Forms.TextBox();
+            this.TBgenre = new System.Windows.Forms.TextBox();
+            this.TBvcode = new System.Windows.Forms.TextBox();
+            this.lbloutdate = new System.Windows.Forms.Label();
+            this.lblcompany = new System.Windows.Forms.Label();
+            this.lbldirect = new System.Windows.Forms.Label();
+            this.lblact = new System.Windows.Forms.Label();
+            this.lblsubject = new System.Windows.Forms.Label();
+            this.lblgenre = new System.Windows.Forms.Label();
+            this.lblvcode = new System.Windows.Forms.Label();
             this.bt_vinsert = new System.Windows.Forms.Button();
             this.bt_vsave = new System.Windows.Forms.Button();
             this.bt_vdelete = new System.Windows.Forms.Button();
@@ -52,8 +53,16 @@
             this.lbl_allvcount = new System.Windows.Forms.Label();
             this.bt_update = new System.Windows.Forms.Button();
             this.dgVideo = new System.Windows.Forms.DataGridView();
+            this.dS_videomg1 = new Video_mg.DS_videomg();
+            this.sqlSelectCommand1 = new System.Data.SqlClient.SqlCommand();
+            this.sqlInsertCommand1 = new System.Data.SqlClient.SqlCommand();
+            this.sqlUpdateCommand1 = new System.Data.SqlClient.SqlCommand();
+            this.sqlDeleteCommand1 = new System.Data.SqlClient.SqlCommand();
+            this.sqlDataAdapter1 = new System.Data.SqlClient.SqlDataAdapter();
+            this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
             this.GB_videoinfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgVideo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_videomg1)).BeginInit();
             this.SuspendLayout();
             // 
             // GB_videoinfo
@@ -81,61 +90,69 @@
             this.GB_videoinfo.TabStop = false;
             this.GB_videoinfo.Text = "비디오 정보";
             // 
-            // lblvcode
+            // DPoutdate
             // 
-            this.lblvcode.AutoSize = true;
-            this.lblvcode.Location = new System.Drawing.Point(20, 30);
-            this.lblvcode.Name = "lblvcode";
-            this.lblvcode.Size = new System.Drawing.Size(97, 15);
-            this.lblvcode.TabIndex = 0;
-            this.lblvcode.Text = "비디오 코드 :";
+            this.DPoutdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.DPoutdate.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.dS_videomg1, "videomg.out_date", true));
+            this.DPoutdate.Font = new System.Drawing.Font("굴림", 9F);
+            this.DPoutdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DPoutdate.Location = new System.Drawing.Point(477, 142);
+            this.DPoutdate.Name = "DPoutdate";
+            this.DPoutdate.Size = new System.Drawing.Size(275, 25);
+            this.DPoutdate.TabIndex = 8;
             // 
-            // lblgenre
+            // TBcompany
             // 
-            this.lblgenre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblgenre.AutoSize = true;
-            this.lblgenre.Location = new System.Drawing.Point(429, 30);
-            this.lblgenre.Name = "lblgenre";
-            this.lblgenre.Size = new System.Drawing.Size(47, 15);
-            this.lblgenre.TabIndex = 1;
-            this.lblgenre.Text = "장르 :";
+            this.TBcompany.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dS_videomg1, "videomg.company", true));
+            this.TBcompany.Location = new System.Drawing.Point(118, 142);
+            this.TBcompany.Name = "TBcompany";
+            this.TBcompany.Size = new System.Drawing.Size(275, 25);
+            this.TBcompany.TabIndex = 7;
             // 
-            // lblsubject
+            // TBdirect
             // 
-            this.lblsubject.AutoSize = true;
-            this.lblsubject.Location = new System.Drawing.Point(70, 68);
-            this.lblsubject.Name = "lblsubject";
-            this.lblsubject.Size = new System.Drawing.Size(47, 15);
-            this.lblsubject.TabIndex = 2;
-            this.lblsubject.Text = "제목 :";
+            this.TBdirect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TBdirect.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dS_videomg1, "videomg.direct", true));
+            this.TBdirect.Location = new System.Drawing.Point(477, 103);
+            this.TBdirect.Name = "TBdirect";
+            this.TBdirect.Size = new System.Drawing.Size(275, 25);
+            this.TBdirect.TabIndex = 7;
             // 
-            // lblact
+            // TBact
             // 
-            this.lblact.AutoSize = true;
-            this.lblact.Location = new System.Drawing.Point(35, 107);
-            this.lblact.Name = "lblact";
-            this.lblact.Size = new System.Drawing.Size(82, 15);
-            this.lblact.TabIndex = 3;
-            this.lblact.Text = "주연 배우 :";
+            this.TBact.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dS_videomg1, "videomg.act", true));
+            this.TBact.Location = new System.Drawing.Point(118, 103);
+            this.TBact.Name = "TBact";
+            this.TBact.Size = new System.Drawing.Size(275, 25);
+            this.TBact.TabIndex = 7;
             // 
-            // lbldirect
+            // TBsubject
             // 
-            this.lbldirect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbldirect.AutoSize = true;
-            this.lbldirect.Location = new System.Drawing.Point(429, 107);
-            this.lbldirect.Name = "lbldirect";
-            this.lbldirect.Size = new System.Drawing.Size(47, 15);
-            this.lbldirect.TabIndex = 4;
-            this.lbldirect.Text = "감독 :";
+            this.TBsubject.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TBsubject.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dS_videomg1, "videomg._subject", true));
+            this.TBsubject.Location = new System.Drawing.Point(118, 64);
+            this.TBsubject.Name = "TBsubject";
+            this.TBsubject.Size = new System.Drawing.Size(634, 25);
+            this.TBsubject.TabIndex = 7;
             // 
-            // lblcompany
+            // TBgenre
             // 
-            this.lblcompany.AutoSize = true;
-            this.lblcompany.Location = new System.Drawing.Point(15, 146);
-            this.lblcompany.Name = "lblcompany";
-            this.lblcompany.Size = new System.Drawing.Size(102, 15);
-            this.lblcompany.TabIndex = 5;
-            this.lblcompany.Text = "제작 및 배급 :";
+            this.TBgenre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TBgenre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dS_videomg1, "videomg.genre", true));
+            this.TBgenre.Location = new System.Drawing.Point(477, 26);
+            this.TBgenre.Name = "TBgenre";
+            this.TBgenre.Size = new System.Drawing.Size(275, 25);
+            this.TBgenre.TabIndex = 7;
+            // 
+            // TBvcode
+            // 
+            this.TBvcode.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.dS_videomg1, "videomg.vcode", true));
+            this.TBvcode.Location = new System.Drawing.Point(118, 26);
+            this.TBvcode.MaxLength = 13;
+            this.TBvcode.Name = "TBvcode";
+            this.TBvcode.Size = new System.Drawing.Size(275, 25);
+            this.TBvcode.TabIndex = 7;
             // 
             // lbloutdate
             // 
@@ -147,61 +164,61 @@
             this.lbloutdate.TabIndex = 6;
             this.lbloutdate.Text = "출시일 :";
             // 
-            // TBvcode
+            // lblcompany
             // 
-            this.TBvcode.Location = new System.Drawing.Point(118, 26);
-            this.TBvcode.Name = "TBvcode";
-            this.TBvcode.Size = new System.Drawing.Size(275, 25);
-            this.TBvcode.TabIndex = 7;
+            this.lblcompany.AutoSize = true;
+            this.lblcompany.Location = new System.Drawing.Point(15, 146);
+            this.lblcompany.Name = "lblcompany";
+            this.lblcompany.Size = new System.Drawing.Size(102, 15);
+            this.lblcompany.TabIndex = 5;
+            this.lblcompany.Text = "제작 및 배급 :";
             // 
-            // TBgenre
+            // lbldirect
             // 
-            this.TBgenre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TBgenre.Location = new System.Drawing.Point(477, 26);
-            this.TBgenre.Name = "TBgenre";
-            this.TBgenre.Size = new System.Drawing.Size(275, 25);
-            this.TBgenre.TabIndex = 7;
+            this.lbldirect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbldirect.AutoSize = true;
+            this.lbldirect.Location = new System.Drawing.Point(429, 107);
+            this.lbldirect.Name = "lbldirect";
+            this.lbldirect.Size = new System.Drawing.Size(47, 15);
+            this.lbldirect.TabIndex = 4;
+            this.lbldirect.Text = "감독 :";
             // 
-            // TBsubject
+            // lblact
             // 
-            this.TBsubject.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TBsubject.Location = new System.Drawing.Point(118, 64);
-            this.TBsubject.Name = "TBsubject";
-            this.TBsubject.Size = new System.Drawing.Size(634, 25);
-            this.TBsubject.TabIndex = 7;
+            this.lblact.AutoSize = true;
+            this.lblact.Location = new System.Drawing.Point(35, 107);
+            this.lblact.Name = "lblact";
+            this.lblact.Size = new System.Drawing.Size(82, 15);
+            this.lblact.TabIndex = 3;
+            this.lblact.Text = "주연 배우 :";
             // 
-            // TBact
+            // lblsubject
             // 
-            this.TBact.Location = new System.Drawing.Point(118, 103);
-            this.TBact.Name = "TBact";
-            this.TBact.Size = new System.Drawing.Size(275, 25);
-            this.TBact.TabIndex = 7;
+            this.lblsubject.AutoSize = true;
+            this.lblsubject.Location = new System.Drawing.Point(70, 68);
+            this.lblsubject.Name = "lblsubject";
+            this.lblsubject.Size = new System.Drawing.Size(47, 15);
+            this.lblsubject.TabIndex = 2;
+            this.lblsubject.Text = "제목 :";
             // 
-            // TBdirect
+            // lblgenre
             // 
-            this.TBdirect.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.TBdirect.Location = new System.Drawing.Point(477, 103);
-            this.TBdirect.Name = "TBdirect";
-            this.TBdirect.Size = new System.Drawing.Size(275, 25);
-            this.TBdirect.TabIndex = 7;
+            this.lblgenre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblgenre.AutoSize = true;
+            this.lblgenre.Location = new System.Drawing.Point(429, 30);
+            this.lblgenre.Name = "lblgenre";
+            this.lblgenre.Size = new System.Drawing.Size(47, 15);
+            this.lblgenre.TabIndex = 1;
+            this.lblgenre.Text = "장르 :";
             // 
-            // TBcompany
+            // lblvcode
             // 
-            this.TBcompany.Location = new System.Drawing.Point(118, 142);
-            this.TBcompany.Name = "TBcompany";
-            this.TBcompany.Size = new System.Drawing.Size(275, 25);
-            this.TBcompany.TabIndex = 7;
-            // 
-            // DPoutdate
-            // 
-            this.DPoutdate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.DPoutdate.Font = new System.Drawing.Font("굴림", 9F);
-            this.DPoutdate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DPoutdate.Location = new System.Drawing.Point(477, 142);
-            this.DPoutdate.Name = "DPoutdate";
-            this.DPoutdate.Size = new System.Drawing.Size(275, 25);
-            this.DPoutdate.TabIndex = 8;
+            this.lblvcode.AutoSize = true;
+            this.lblvcode.Location = new System.Drawing.Point(20, 30);
+            this.lblvcode.Name = "lblvcode";
+            this.lblvcode.Size = new System.Drawing.Size(97, 15);
+            this.lblvcode.TabIndex = 0;
+            this.lblvcode.Text = "비디오 코드 :";
             // 
             // bt_vinsert
             // 
@@ -211,6 +228,7 @@
             this.bt_vinsert.TabIndex = 1;
             this.bt_vinsert.Text = "추가";
             this.bt_vinsert.UseVisualStyleBackColor = true;
+            this.bt_vinsert.Click += new System.EventHandler(this.Bt_vinsert_Click);
             // 
             // bt_vsave
             // 
@@ -220,6 +238,7 @@
             this.bt_vsave.TabIndex = 1;
             this.bt_vsave.Text = "저장";
             this.bt_vsave.UseVisualStyleBackColor = true;
+            this.bt_vsave.Click += new System.EventHandler(this.Bt_vsave_Click);
             // 
             // bt_vdelete
             // 
@@ -229,6 +248,7 @@
             this.bt_vdelete.TabIndex = 1;
             this.bt_vdelete.Text = "삭제";
             this.bt_vdelete.UseVisualStyleBackColor = true;
+            this.bt_vdelete.Click += new System.EventHandler(this.Bt_vdelete_Click);
             // 
             // bt_vcancel
             // 
@@ -238,6 +258,7 @@
             this.bt_vcancel.TabIndex = 1;
             this.bt_vcancel.Text = "취소";
             this.bt_vcancel.UseVisualStyleBackColor = true;
+            this.bt_vcancel.Click += new System.EventHandler(this.Bt_vcancel_Click);
             // 
             // bt_exit
             // 
@@ -248,6 +269,7 @@
             this.bt_exit.TabIndex = 1;
             this.bt_exit.Text = "나가기";
             this.bt_exit.UseVisualStyleBackColor = true;
+            this.bt_exit.Click += new System.EventHandler(this.Bt_exit_Click);
             // 
             // lblvcount
             // 
@@ -278,6 +300,7 @@
             this.bt_update.TabIndex = 4;
             this.bt_update.Text = "목록 저장";
             this.bt_update.UseVisualStyleBackColor = true;
+            this.bt_update.Click += new System.EventHandler(this.Bt_update_Click);
             // 
             // dgVideo
             // 
@@ -294,6 +317,95 @@
             this.dgVideo.RowTemplate.Height = 27;
             this.dgVideo.Size = new System.Drawing.Size(792, 234);
             this.dgVideo.TabIndex = 5;
+            this.dgVideo.CurrentCellChanged += new System.EventHandler(this.DgVideo_CurrentCellChanged);
+            // 
+            // dS_videomg1
+            // 
+            this.dS_videomg1.DataSetName = "DS_videomg";
+            this.dS_videomg1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sqlSelectCommand1
+            // 
+            this.sqlSelectCommand1.CommandText = "SELECT videomg.*\r\nFROM  videomg";
+            this.sqlSelectCommand1.Connection = this.sqlConnection1;
+            // 
+            // sqlInsertCommand1
+            // 
+            this.sqlInsertCommand1.CommandText = resources.GetString("sqlInsertCommand1.CommandText");
+            this.sqlInsertCommand1.Connection = this.sqlConnection1;
+            this.sqlInsertCommand1.Parameters.AddRange(new System.Data.SqlClient.SqlParameter[] {
+            new System.Data.SqlClient.SqlParameter("@vcode", System.Data.SqlDbType.VarChar, 0, "vcode"),
+            new System.Data.SqlClient.SqlParameter("@genre", System.Data.SqlDbType.VarChar, 0, "genre"),
+            new System.Data.SqlClient.SqlParameter("@_subject", System.Data.SqlDbType.VarChar, 0, "_subject"),
+            new System.Data.SqlClient.SqlParameter("@act", System.Data.SqlDbType.VarChar, 0, "act"),
+            new System.Data.SqlClient.SqlParameter("@direct", System.Data.SqlDbType.VarChar, 0, "direct"),
+            new System.Data.SqlClient.SqlParameter("@company", System.Data.SqlDbType.VarChar, 0, "company"),
+            new System.Data.SqlClient.SqlParameter("@out_date", System.Data.SqlDbType.VarChar, 0, "out_date")});
+            // 
+            // sqlUpdateCommand1
+            // 
+            this.sqlUpdateCommand1.CommandText = resources.GetString("sqlUpdateCommand1.CommandText");
+            this.sqlUpdateCommand1.Connection = this.sqlConnection1;
+            this.sqlUpdateCommand1.Parameters.AddRange(new System.Data.SqlClient.SqlParameter[] {
+            new System.Data.SqlClient.SqlParameter("@vcode", System.Data.SqlDbType.VarChar, 0, "vcode"),
+            new System.Data.SqlClient.SqlParameter("@genre", System.Data.SqlDbType.VarChar, 0, "genre"),
+            new System.Data.SqlClient.SqlParameter("@_subject", System.Data.SqlDbType.VarChar, 0, "_subject"),
+            new System.Data.SqlClient.SqlParameter("@act", System.Data.SqlDbType.VarChar, 0, "act"),
+            new System.Data.SqlClient.SqlParameter("@direct", System.Data.SqlDbType.VarChar, 0, "direct"),
+            new System.Data.SqlClient.SqlParameter("@company", System.Data.SqlDbType.VarChar, 0, "company"),
+            new System.Data.SqlClient.SqlParameter("@out_date", System.Data.SqlDbType.VarChar, 0, "out_date"),
+            new System.Data.SqlClient.SqlParameter("@Original_vcode", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "vcode", System.Data.DataRowVersion.Original, null),
+            new System.Data.SqlClient.SqlParameter("@IsNull_genre", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "genre", System.Data.DataRowVersion.Original, true, null, "", "", ""),
+            new System.Data.SqlClient.SqlParameter("@Original_genre", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "genre", System.Data.DataRowVersion.Original, null),
+            new System.Data.SqlClient.SqlParameter("@Original__subject", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "_subject", System.Data.DataRowVersion.Original, null),
+            new System.Data.SqlClient.SqlParameter("@IsNull_act", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "act", System.Data.DataRowVersion.Original, true, null, "", "", ""),
+            new System.Data.SqlClient.SqlParameter("@Original_act", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "act", System.Data.DataRowVersion.Original, null),
+            new System.Data.SqlClient.SqlParameter("@IsNull_direct", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "direct", System.Data.DataRowVersion.Original, true, null, "", "", ""),
+            new System.Data.SqlClient.SqlParameter("@Original_direct", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "direct", System.Data.DataRowVersion.Original, null),
+            new System.Data.SqlClient.SqlParameter("@IsNull_company", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "company", System.Data.DataRowVersion.Original, true, null, "", "", ""),
+            new System.Data.SqlClient.SqlParameter("@Original_company", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "company", System.Data.DataRowVersion.Original, null),
+            new System.Data.SqlClient.SqlParameter("@IsNull_out_date", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "out_date", System.Data.DataRowVersion.Original, true, null, "", "", ""),
+            new System.Data.SqlClient.SqlParameter("@Original_out_date", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "out_date", System.Data.DataRowVersion.Original, null)});
+            // 
+            // sqlDeleteCommand1
+            // 
+            this.sqlDeleteCommand1.CommandText = resources.GetString("sqlDeleteCommand1.CommandText");
+            this.sqlDeleteCommand1.Connection = this.sqlConnection1;
+            this.sqlDeleteCommand1.Parameters.AddRange(new System.Data.SqlClient.SqlParameter[] {
+            new System.Data.SqlClient.SqlParameter("@Original_vcode", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "vcode", System.Data.DataRowVersion.Original, null),
+            new System.Data.SqlClient.SqlParameter("@IsNull_genre", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "genre", System.Data.DataRowVersion.Original, true, null, "", "", ""),
+            new System.Data.SqlClient.SqlParameter("@Original_genre", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "genre", System.Data.DataRowVersion.Original, null),
+            new System.Data.SqlClient.SqlParameter("@Original__subject", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "_subject", System.Data.DataRowVersion.Original, null),
+            new System.Data.SqlClient.SqlParameter("@IsNull_act", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "act", System.Data.DataRowVersion.Original, true, null, "", "", ""),
+            new System.Data.SqlClient.SqlParameter("@Original_act", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "act", System.Data.DataRowVersion.Original, null),
+            new System.Data.SqlClient.SqlParameter("@IsNull_direct", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "direct", System.Data.DataRowVersion.Original, true, null, "", "", ""),
+            new System.Data.SqlClient.SqlParameter("@Original_direct", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "direct", System.Data.DataRowVersion.Original, null),
+            new System.Data.SqlClient.SqlParameter("@IsNull_company", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "company", System.Data.DataRowVersion.Original, true, null, "", "", ""),
+            new System.Data.SqlClient.SqlParameter("@Original_company", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "company", System.Data.DataRowVersion.Original, null),
+            new System.Data.SqlClient.SqlParameter("@IsNull_out_date", System.Data.SqlDbType.Int, 0, System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "out_date", System.Data.DataRowVersion.Original, true, null, "", "", ""),
+            new System.Data.SqlClient.SqlParameter("@Original_out_date", System.Data.SqlDbType.VarChar, 0, System.Data.ParameterDirection.Input, false, ((byte)(0)), ((byte)(0)), "out_date", System.Data.DataRowVersion.Original, null)});
+            // 
+            // sqlDataAdapter1
+            // 
+            this.sqlDataAdapter1.DeleteCommand = this.sqlDeleteCommand1;
+            this.sqlDataAdapter1.InsertCommand = this.sqlInsertCommand1;
+            this.sqlDataAdapter1.SelectCommand = this.sqlSelectCommand1;
+            this.sqlDataAdapter1.TableMappings.AddRange(new System.Data.Common.DataTableMapping[] {
+            new System.Data.Common.DataTableMapping("Table", "videomg", new System.Data.Common.DataColumnMapping[] {
+                        new System.Data.Common.DataColumnMapping("vcode", "vcode"),
+                        new System.Data.Common.DataColumnMapping("genre", "genre"),
+                        new System.Data.Common.DataColumnMapping("_subject", "_subject"),
+                        new System.Data.Common.DataColumnMapping("act", "act"),
+                        new System.Data.Common.DataColumnMapping("direct", "direct"),
+                        new System.Data.Common.DataColumnMapping("company", "company"),
+                        new System.Data.Common.DataColumnMapping("out_date", "out_date")})});
+            this.sqlDataAdapter1.UpdateCommand = this.sqlUpdateCommand1;
+            // 
+            // sqlConnection1
+            // 
+            this.sqlConnection1.ConnectionString = "Data Source=localhost;Initial Catalog=Videomg;User ID=sa;Password=std001;Pooling=" +
+    "False";
+            this.sqlConnection1.FireInfoMessageEventOnUserErrors = false;
             // 
             // VideoMg
             // 
@@ -313,9 +425,11 @@
             this.MinimumSize = new System.Drawing.Size(835, 600);
             this.Name = "VideoMg";
             this.Text = "비디오 정보";
+            this.Load += new System.EventHandler(this.VideoMg_Load);
             this.GB_videoinfo.ResumeLayout(false);
             this.GB_videoinfo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgVideo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_videomg1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,5 +461,12 @@
         private System.Windows.Forms.Label lbl_allvcount;
         private System.Windows.Forms.Button bt_update;
         private System.Windows.Forms.DataGridView dgVideo;
+        private DS_videomg dS_videomg1;
+        private System.Data.SqlClient.SqlCommand sqlSelectCommand1;
+        private System.Data.SqlClient.SqlConnection sqlConnection1;
+        private System.Data.SqlClient.SqlCommand sqlInsertCommand1;
+        private System.Data.SqlClient.SqlCommand sqlUpdateCommand1;
+        private System.Data.SqlClient.SqlCommand sqlDeleteCommand1;
+        private System.Data.SqlClient.SqlDataAdapter sqlDataAdapter1;
     }
 }
