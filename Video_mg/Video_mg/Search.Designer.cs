@@ -73,6 +73,7 @@
             this.rb_1.TabStop = true;
             this.rb_1.Text = "비디오 대여 순위";
             this.rb_1.UseVisualStyleBackColor = true;
+            this.rb_1.CheckedChanged += new System.EventHandler(this.Rb_1_CheckedChanged);
             // 
             // rb_2
             // 
@@ -84,6 +85,7 @@
             this.rb_2.TabStop = true;
             this.rb_2.Text = "대여중인 비디오";
             this.rb_2.UseVisualStyleBackColor = true;
+            this.rb_2.CheckedChanged += new System.EventHandler(this.Rb_2_CheckedChanged);
             // 
             // rb_3
             // 
@@ -95,6 +97,7 @@
             this.rb_3.TabStop = true;
             this.rb_3.Text = "고객 대여 순위";
             this.rb_3.UseVisualStyleBackColor = true;
+            this.rb_3.CheckedChanged += new System.EventHandler(this.Rb_3_CheckedChanged);
             // 
             // lblgenre
             // 
@@ -141,6 +144,7 @@
             this.bt_search.TabIndex = 6;
             this.bt_search.Text = "검색";
             this.bt_search.UseVisualStyleBackColor = true;
+            this.bt_search.Click += new System.EventHandler(this.Bt_search_Click);
             // 
             // bt_exit
             // 
@@ -151,6 +155,7 @@
             this.bt_exit.TabIndex = 6;
             this.bt_exit.Text = "나가기";
             this.bt_exit.UseVisualStyleBackColor = true;
+            this.bt_exit.Click += new System.EventHandler(this.Bt_exit_Click);
             // 
             // dgSearch
             // 
