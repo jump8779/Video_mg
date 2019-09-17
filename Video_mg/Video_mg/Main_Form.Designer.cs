@@ -62,7 +62,7 @@
             this.toolStripMenuItem_support});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1482, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1482, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -119,7 +119,7 @@
             this.toolStripButton_Search,
             this.toolStripSeparator2,
             this.toolStripButton_VOption});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 28);
+            this.toolStrip1.Location = new System.Drawing.Point(0, 30);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1482, 47);
             this.toolStrip1.TabIndex = 1;
@@ -183,6 +183,7 @@
             this.toolStripButton_VOption.Size = new System.Drawing.Size(78, 44);
             this.toolStripButton_VOption.Text = "환경 설정";
             this.toolStripButton_VOption.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton_VOption.Click += new System.EventHandler(this.ToolStripButton_VOption_Click);
             // 
             // Main
             // 

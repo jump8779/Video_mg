@@ -86,6 +86,12 @@
     <Compile Include="VideoMg.Designer.cs">
       <DependentUpon>VideoMg.cs</DependentUpon>
     </Compile>
+    <Compile Include="VOption.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VOption.Designer.cs">
+      <DependentUpon>VOption.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="LentMg.resx">
       <DependentUpon>LentMg.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="VideoMg.resx">
       <DependentUpon>VideoMg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VOption.resx">
+      <DependentUpon>VOption.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DS_videomg.xsc">
       <DependentUpon>DS_videomg.xsd</DependentUpon>

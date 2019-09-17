@@ -41,6 +41,12 @@ namespace Video_mg
             ser.MdiParent = this;
             ser.Show();
         }
+        private void ToolStripButton_VOption_Click(object sender, EventArgs e)
+        {
+            VOption vop = new VOption();
+            vop.MdiParent = this;
+            vop.Show();
+        }
         private void Main_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
