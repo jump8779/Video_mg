@@ -117,4 +117,48 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="dS_videomg1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="sqlSelectCommand1.DesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="sqlSelectCommand1.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="sqlConnection1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>340, 17</value>
+  </metadata>
+  <metadata name="sqlInsertCommand1.DesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="sqlInsertCommand1.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="sqlInsertCommand1.CommandText" xml:space="preserve">
+    <value>INSERT INTO [membermg] ([mcode], [iname], [jumin], [sinbun], [sex], [phone], [pcs], [zip], [_address]) VALUES (@mcode, @iname, @jumin, @sinbun, @sex, @phone, @pcs, @zip, @_address);
+SELECT mcode, iname, jumin, sinbun, sex, phone, pcs, zip, _address FROM membermg WHERE (mcode = @mcode)</value>
+  </data>
+  <metadata name="sqlUpdateCommand1.DesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="sqlUpdateCommand1.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="sqlUpdateCommand1.CommandText" xml:space="preserve">
+    <value>UPDATE [membermg] SET [mcode] = @mcode, [iname] = @iname, [jumin] = @jumin, [sinbun] = @sinbun, [sex] = @sex, [phone] = @phone, [pcs] = @pcs, [zip] = @zip, [_address] = @_address WHERE (([mcode] = @Original_mcode) AND ([iname] = @Original_iname) AND ([jumin] = @Original_jumin) AND ((@IsNull_sinbun = 1 AND [sinbun] IS NULL) OR ([sinbun] = @Original_sinbun)) AND ((@IsNull_sex = 1 AND [sex] IS NULL) OR ([sex] = @Original_sex)) AND ([phone] = @Original_phone) AND ((@IsNull_pcs = 1 AND [pcs] IS NULL) OR ([pcs] = @Original_pcs)) AND ((@IsNull_zip = 1 AND [zip] IS NULL) OR ([zip] = @Original_zip)) AND ((@IsNull__address = 1 AND [_address] IS NULL) OR ([_address] = @Original__address)));
+SELECT mcode, iname, jumin, sinbun, sex, phone, pcs, zip, _address FROM membermg WHERE (mcode = @mcode)</value>
+  </data>
+  <metadata name="sqlDeleteCommand1.DesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <metadata name="sqlDeleteCommand1.CommandDesignTimeVisible" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>False</value>
+  </metadata>
+  <data name="sqlDeleteCommand1.CommandText" xml:space="preserve">
+    <value>DELETE FROM [membermg] WHERE (([mcode] = @Original_mcode) AND ([iname] = @Original_iname) AND ([jumin] = @Original_jumin) AND ((@IsNull_sinbun = 1 AND [sinbun] IS NULL) OR ([sinbun] = @Original_sinbun)) AND ((@IsNull_sex = 1 AND [sex] IS NULL) OR ([sex] = @Original_sex)) AND ([phone] = @Original_phone) AND ((@IsNull_pcs = 1 AND [pcs] IS NULL) OR ([pcs] = @Original_pcs)) AND ((@IsNull_zip = 1 AND [zip] IS NULL) OR ([zip] = @Original_zip)) AND ((@IsNull__address = 1 AND [_address] IS NULL) OR ([_address] = @Original__address)))</value>
+  </data>
+  <metadata name="sqlDataAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>167, 17</value>
+  </metadata>
 </root>
