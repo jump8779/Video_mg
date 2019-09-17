@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VideoMg));
             this.GB_videoinfo = new System.Windows.Forms.GroupBox();
             this.DPoutdate = new System.Windows.Forms.DateTimePicker();
+            this.dS_videomg1 = new Video_mg.DS_videomg();
             this.TBcompany = new System.Windows.Forms.TextBox();
             this.TBdirect = new System.Windows.Forms.TextBox();
             this.TBact = new System.Windows.Forms.TextBox();
@@ -53,16 +54,22 @@
             this.lbl_allvcount = new System.Windows.Forms.Label();
             this.bt_update = new System.Windows.Forms.Button();
             this.dgVideo = new System.Windows.Forms.DataGridView();
-            this.dS_videomg1 = new Video_mg.DS_videomg();
             this.sqlSelectCommand1 = new System.Data.SqlClient.SqlCommand();
+            this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
             this.sqlInsertCommand1 = new System.Data.SqlClient.SqlCommand();
             this.sqlUpdateCommand1 = new System.Data.SqlClient.SqlCommand();
             this.sqlDeleteCommand1 = new System.Data.SqlClient.SqlCommand();
             this.sqlDataAdapter1 = new System.Data.SqlClient.SqlDataAdapter();
-            this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GB_videoinfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgVideo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_videomg1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgVideo)).BeginInit();
             this.SuspendLayout();
             // 
             // GB_videoinfo
@@ -100,6 +107,11 @@
             this.DPoutdate.Name = "DPoutdate";
             this.DPoutdate.Size = new System.Drawing.Size(275, 25);
             this.DPoutdate.TabIndex = 8;
+            // 
+            // dS_videomg1
+            // 
+            this.dS_videomg1.DataSetName = "DS_videomg";
+            this.dS_videomg1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // TBcompany
             // 
@@ -310,6 +322,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgVideo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgVideo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7});
             this.dgVideo.Location = new System.Drawing.Point(13, 307);
             this.dgVideo.Name = "dgVideo";
             this.dgVideo.ReadOnly = true;
@@ -319,15 +339,16 @@
             this.dgVideo.TabIndex = 5;
             this.dgVideo.CurrentCellChanged += new System.EventHandler(this.DgVideo_CurrentCellChanged);
             // 
-            // dS_videomg1
-            // 
-            this.dS_videomg1.DataSetName = "DS_videomg";
-            this.dS_videomg1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // sqlSelectCommand1
             // 
             this.sqlSelectCommand1.CommandText = "SELECT videomg.*\r\nFROM  videomg";
             this.sqlSelectCommand1.Connection = this.sqlConnection1;
+            // 
+            // sqlConnection1
+            // 
+            this.sqlConnection1.ConnectionString = "Data Source=localhost;Initial Catalog=Videomg;User ID=sa;Password=std001;Pooling=" +
+    "False";
+            this.sqlConnection1.FireInfoMessageEventOnUserErrors = false;
             // 
             // sqlInsertCommand1
             // 
@@ -401,11 +422,68 @@
                         new System.Data.Common.DataColumnMapping("out_date", "out_date")})});
             this.sqlDataAdapter1.UpdateCommand = this.sqlUpdateCommand1;
             // 
-            // sqlConnection1
+            // Column1
             // 
-            this.sqlConnection1.ConnectionString = "Data Source=localhost;Initial Catalog=Videomg;User ID=sa;Password=std001;Pooling=" +
-    "False";
-            this.sqlConnection1.FireInfoMessageEventOnUserErrors = false;
+            this.Column1.DataPropertyName = "vcode";
+            this.Column1.HeaderText = "코드";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "genre";
+            this.Column2.HeaderText = "장르";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "_subject";
+            this.Column3.HeaderText = "제목";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "act";
+            this.Column4.HeaderText = "주연배우";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 125;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "direct";
+            this.Column5.HeaderText = "감독";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 125;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "company";
+            this.Column6.HeaderText = "제작 및 배급";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 125;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "out_date";
+            this.Column7.HeaderText = "출시일";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Width = 125;
             // 
             // VideoMg
             // 
@@ -428,8 +506,8 @@
             this.Load += new System.EventHandler(this.VideoMg_Load);
             this.GB_videoinfo.ResumeLayout(false);
             this.GB_videoinfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgVideo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_videomg1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgVideo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -468,5 +546,12 @@
         private System.Data.SqlClient.SqlCommand sqlUpdateCommand1;
         private System.Data.SqlClient.SqlCommand sqlDeleteCommand1;
         private System.Data.SqlClient.SqlDataAdapter sqlDataAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
     }
 }
