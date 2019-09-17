@@ -54,12 +54,6 @@
             this.lbl_allvcount = new System.Windows.Forms.Label();
             this.bt_update = new System.Windows.Forms.Button();
             this.dgVideo = new System.Windows.Forms.DataGridView();
-            this.sqlSelectCommand1 = new System.Data.SqlClient.SqlCommand();
-            this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
-            this.sqlInsertCommand1 = new System.Data.SqlClient.SqlCommand();
-            this.sqlUpdateCommand1 = new System.Data.SqlClient.SqlCommand();
-            this.sqlDeleteCommand1 = new System.Data.SqlClient.SqlCommand();
-            this.sqlDataAdapter1 = new System.Data.SqlClient.SqlDataAdapter();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +61,12 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sqlSelectCommand1 = new System.Data.SqlClient.SqlCommand();
+            this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
+            this.sqlInsertCommand1 = new System.Data.SqlClient.SqlCommand();
+            this.sqlUpdateCommand1 = new System.Data.SqlClient.SqlCommand();
+            this.sqlDeleteCommand1 = new System.Data.SqlClient.SqlCommand();
+            this.sqlDataAdapter1 = new System.Data.SqlClient.SqlDataAdapter();
             this.GB_videoinfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dS_videomg1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgVideo)).BeginInit();
@@ -339,6 +339,69 @@
             this.dgVideo.TabIndex = 5;
             this.dgVideo.CurrentCellChanged += new System.EventHandler(this.DgVideo_CurrentCellChanged);
             // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "vcode";
+            this.Column1.HeaderText = "코드";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "genre";
+            this.Column2.HeaderText = "장르";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            this.Column2.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "_subject";
+            this.Column3.HeaderText = "제목";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "act";
+            this.Column4.HeaderText = "주연배우";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            this.Column4.Width = 125;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "direct";
+            this.Column5.HeaderText = "감독";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Width = 125;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "company";
+            this.Column6.HeaderText = "제작 및 배급";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Width = 125;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "out_date";
+            this.Column7.HeaderText = "출시일";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Width = 125;
+            // 
             // sqlSelectCommand1
             // 
             this.sqlSelectCommand1.CommandText = "SELECT videomg.*\r\nFROM  videomg";
@@ -422,69 +485,6 @@
                         new System.Data.Common.DataColumnMapping("out_date", "out_date")})});
             this.sqlDataAdapter1.UpdateCommand = this.sqlUpdateCommand1;
             // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "vcode";
-            this.Column1.HeaderText = "코드";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Width = 125;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "genre";
-            this.Column2.HeaderText = "장르";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            this.Column2.Width = 125;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "_subject";
-            this.Column3.HeaderText = "제목";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Width = 125;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "act";
-            this.Column4.HeaderText = "주연배우";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            this.Column4.Width = 125;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "direct";
-            this.Column5.HeaderText = "감독";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Width = 125;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "company";
-            this.Column6.HeaderText = "제작 및 배급";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Width = 125;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "out_date";
-            this.Column7.HeaderText = "출시일";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Width = 125;
-            // 
             // VideoMg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -500,6 +500,7 @@
             this.Controls.Add(this.bt_vsave);
             this.Controls.Add(this.bt_vinsert);
             this.Controls.Add(this.GB_videoinfo);
+            this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(835, 600);
             this.Name = "VideoMg";
             this.Text = "비디오 정보";

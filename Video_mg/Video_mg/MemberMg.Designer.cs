@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MemberMg));
             this.GB_memberinfo = new System.Windows.Forms.GroupBox();
             this.TBaddress = new System.Windows.Forms.TextBox();
+            this.dS_videomg1 = new Video_mg.DS_videomg();
             this.TBzip = new System.Windows.Forms.TextBox();
             this.TBpcs = new System.Windows.Forms.TextBox();
             this.TBphone = new System.Windows.Forms.TextBox();
@@ -57,16 +58,15 @@
             this.lblallmember = new System.Windows.Forms.Label();
             this.lbl_allmcount = new System.Windows.Forms.Label();
             this.dgMember = new System.Windows.Forms.DataGridView();
-            this.dS_videomg1 = new Video_mg.DS_videomg();
             this.sqlSelectCommand1 = new System.Data.SqlClient.SqlCommand();
+            this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
             this.sqlInsertCommand1 = new System.Data.SqlClient.SqlCommand();
             this.sqlUpdateCommand1 = new System.Data.SqlClient.SqlCommand();
             this.sqlDeleteCommand1 = new System.Data.SqlClient.SqlCommand();
             this.sqlDataAdapter1 = new System.Data.SqlClient.SqlDataAdapter();
-            this.sqlConnection1 = new System.Data.SqlClient.SqlConnection();
             this.GB_memberinfo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgMember)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_videomg1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgMember)).BeginInit();
             this.SuspendLayout();
             // 
             // GB_memberinfo
@@ -107,6 +107,11 @@
             this.TBaddress.Name = "TBaddress";
             this.TBaddress.Size = new System.Drawing.Size(740, 25);
             this.TBaddress.TabIndex = 17;
+            // 
+            // dS_videomg1
+            // 
+            this.dS_videomg1.DataSetName = "DS_videomg";
+            this.dS_videomg1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // TBzip
             // 
@@ -359,15 +364,16 @@
             this.dgMember.TabIndex = 4;
             this.dgMember.CurrentCellChanged += new System.EventHandler(this.DgMember_CurrentCellChanged);
             // 
-            // dS_videomg1
-            // 
-            this.dS_videomg1.DataSetName = "DS_videomg";
-            this.dS_videomg1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // sqlSelectCommand1
             // 
             this.sqlSelectCommand1.CommandText = "SELECT membermg.*\r\nFROM  membermg";
             this.sqlSelectCommand1.Connection = this.sqlConnection1;
+            // 
+            // sqlConnection1
+            // 
+            this.sqlConnection1.ConnectionString = "Data Source=localhost;Initial Catalog=Videomg;User ID=sa;Password=std001;Pooling=" +
+    "False";
+            this.sqlConnection1.FireInfoMessageEventOnUserErrors = false;
             // 
             // sqlInsertCommand1
             // 
@@ -451,12 +457,6 @@
                         new System.Data.Common.DataColumnMapping("_address", "_address")})});
             this.sqlDataAdapter1.UpdateCommand = this.sqlUpdateCommand1;
             // 
-            // sqlConnection1
-            // 
-            this.sqlConnection1.ConnectionString = "Data Source=localhost;Initial Catalog=Videomg;User ID=sa;Password=std001;Pooling=" +
-    "False";
-            this.sqlConnection1.FireInfoMessageEventOnUserErrors = false;
-            // 
             // MemberMg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -472,14 +472,15 @@
             this.Controls.Add(this.bt_save);
             this.Controls.Add(this.bt_add);
             this.Controls.Add(this.GB_memberinfo);
+            this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(909, 625);
             this.Name = "MemberMg";
             this.Text = "고객 정보";
             this.Load += new System.EventHandler(this.MemberMg_Load);
             this.GB_memberinfo.ResumeLayout(false);
             this.GB_memberinfo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgMember)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_videomg1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgMember)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

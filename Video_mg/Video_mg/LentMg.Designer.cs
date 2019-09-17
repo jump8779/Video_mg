@@ -919,6 +919,7 @@
             this.Controls.Add(this.GB_videolent);
             this.Controls.Add(this.GB_member);
             this.Controls.Add(this.tabControl1);
+            this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1088, 800);
             this.Name = "LentMg";
             this.Text = "비디오 대여 및 반납 관리";
