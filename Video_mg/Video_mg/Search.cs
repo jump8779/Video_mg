@@ -34,6 +34,23 @@ namespace Video_mg
             string s, Os, Os1;
             if (rb_1.Checked == true)
             {
+                dgSearch.Columns[0].DataPropertyName = "lcount";
+                dgSearch.Columns[1].DataPropertyName = "_subject";
+                dgSearch.Columns[2].DataPropertyName = "genre";
+                dgSearch.Columns[3].DataPropertyName = "out_date";
+
+                dgSearch.Columns[0].HeaderText = "대여 횟수";
+                dgSearch.Columns[1].HeaderText = "영화 제목";
+                dgSearch.Columns[2].HeaderText = "장르";
+                dgSearch.Columns[3].HeaderText = "출시일";
+
+                dgSearch.Columns[0].Visible = true;
+                dgSearch.Columns[1].Visible = true;
+                dgSearch.Columns[2].Visible = true;
+                dgSearch.Columns[3].Visible = true;
+                dgSearch.Columns[4].Visible = false;
+                dgSearch.Columns[5].Visible = false;
+                dgSearch.Columns[6].Visible = false;
                 if (TBgenre.Text == "전체")
                 {
                     Os = "V.vcode = L.vcode";
@@ -50,6 +67,29 @@ namespace Video_mg
             }
             else if (rb_3.Checked == true)
             {
+                dgSearch.Columns[0].DataPropertyName = "mcount";
+                dgSearch.Columns[1].DataPropertyName = "iname";
+                dgSearch.Columns[2].DataPropertyName = "sinbun";
+                dgSearch.Columns[3].DataPropertyName = "sex";
+                dgSearch.Columns[4].DataPropertyName = "phone";
+                dgSearch.Columns[5].DataPropertyName = "pcs";
+                dgSearch.Columns[6].DataPropertyName = "_address";
+
+                dgSearch.Columns[0].HeaderText = "대여 횟수";
+                dgSearch.Columns[1].HeaderText = "고객 이름";
+                dgSearch.Columns[2].HeaderText = "고객 신분";
+                dgSearch.Columns[3].HeaderText = "성별";
+                dgSearch.Columns[4].HeaderText = "연락처";
+                dgSearch.Columns[5].HeaderText = "휴대폰";
+                dgSearch.Columns[6].HeaderText = "주소";
+
+                dgSearch.Columns[0].Visible = true;
+                dgSearch.Columns[1].Visible = true;
+                dgSearch.Columns[2].Visible = true;
+                dgSearch.Columns[3].Visible = true;
+                dgSearch.Columns[4].Visible = true;
+                dgSearch.Columns[5].Visible = true;
+                dgSearch.Columns[6].Visible = true;
                 if (TBsinbun.Text == "전체")
                 {
                     Os = "M.mcode=L.mcode OR M.mcode=-(L.mcode)";
@@ -67,6 +107,29 @@ namespace Video_mg
             }
             else if (rb_2.Checked == true)
             {
+                dgSearch.Columns[0].DataPropertyName = "_subject";
+                dgSearch.Columns[1].DataPropertyName = "genre";
+                dgSearch.Columns[2].DataPropertyName = "lent_date";
+                dgSearch.Columns[3].DataPropertyName = "return_date2";
+                dgSearch.Columns[4].DataPropertyName = "return_date1";
+                dgSearch.Columns[5].DataPropertyName = "iname";
+                dgSearch.Columns[6].DataPropertyName = "phone";
+
+                dgSearch.Columns[0].HeaderText = "영화 제목";
+                dgSearch.Columns[1].HeaderText = "장르";
+                dgSearch.Columns[2].HeaderText = "대여일";
+                dgSearch.Columns[3].HeaderText = "반납일";
+                dgSearch.Columns[4].HeaderText = "반납 예정일";
+                dgSearch.Columns[5].HeaderText = "고객 이름";
+                dgSearch.Columns[6].HeaderText = "연락처";
+
+                dgSearch.Columns[0].Visible = true;
+                dgSearch.Columns[1].Visible = true;
+                dgSearch.Columns[2].Visible = true;
+                dgSearch.Columns[3].Visible = true;
+                dgSearch.Columns[4].Visible = true;
+                dgSearch.Columns[5].Visible = true;
+                dgSearch.Columns[6].Visible = true;
                 if (TBgenre.Text == "전체")
                 {
                     Os = "L.mcode=M.mcode AND L.return_date2='대여중'";
