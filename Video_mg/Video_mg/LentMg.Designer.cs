@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_Input = new System.Windows.Forms.TabPage();
             this.bt_search = new System.Windows.Forms.Button();
@@ -104,6 +105,7 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage_Input.SuspendLayout();
             this.tabPage_Choice.SuspendLayout();
@@ -902,6 +904,11 @@
             this.Column10.Visible = false;
             this.Column10.Width = 125;
             // 
+            // serialPort1
+            // 
+            this.serialPort1.PortName = "COM5";
+            this.serialPort1.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(this.SerialPort1_DataReceived);
+            // 
             // LentMg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -1018,5 +1025,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.IO.Ports.SerialPort serialPort1;
     }
 }

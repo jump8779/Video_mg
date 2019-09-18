@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO.Ports;
 
 namespace Video_mg
 {
@@ -60,7 +61,15 @@ namespace Video_mg
         }
         private void LentMg_Load(object sender, EventArgs e)
         {
-
+            try
+            {
+                //CheckForIllegalCrossThreadCalls = false;
+                serialPort1.Open();
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Bt_readC_Click(object sender, EventArgs e)
@@ -341,6 +350,19 @@ namespace Video_mg
             MemberSelect();
         }
 
+        private void SerialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            this.Invoke(new EventHandler(SerialReceived));
+        }
+        private void SerialReceived(object s, EventArgs e)
+        {
+            TBvcode.Clear();
+            TBvtitle.Clear();
+            string t = serialPort1.ReadLine();
+            TBvcode.Text = t.Substring(0, t.Length - 1);
+
+            Bt_vmatch_Click(s, e);
+        }
         private void LentMg_FormClosing(object sender, FormClosingEventArgs e)
         {
             sql.Close();
